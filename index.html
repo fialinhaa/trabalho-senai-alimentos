@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campanha Solidariedade em Ação | Projeto Integrado SENAI</title>
   
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: DM Sans (Padrão Frísia) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -16,7 +16,7 @@
   <!-- Chart.js para Gráficos Dinâmicos -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Estilos Customizados -->
+  <!-- Estilos Customizados (Inspirados na Frísia) -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,11 +24,13 @@
   <!-- ==================== HEADER & NAVEGAÇÃO ==================== -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="#" class="brand-badge">
-        <span class="brand-logo-pill">SENAI</span>
-        <div>
-          <span class="brand-title">Solidariedade em Ação</span>
-          <span class="brand-sub">Indústria Unida • Projeto Integrado de Gestão</span>
+      <a href="#" class="brand-badge" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none;">
+        <img src="assets/frisia-logo-transparent.png" alt="Frísia Cooperativa Agroindustrial" style="height: 32px; object-fit: contain;">
+        <span style="color: #cbd5e1; font-size: 1.25rem; font-weight: 300;">|</span>
+        <img src="assets/senai-logo.png" alt="SENAI" style="height: 22px; object-fit: contain;">
+        <div style="border-left: 1.5px solid #e2ebf4; padding-left: 0.85rem; margin-left: 0.25rem;">
+          <span class="brand-title" style="display: block; line-height: 1.2;">Solidariedade em Ação</span>
+          <span class="brand-sub">Cooperativa Agroindustrial</span>
         </div>
       </a>
 
@@ -43,6 +45,11 @@
           <span>Painel de Gestão SENAI</span>
           <span class="badge-pill">PODC</span>
         </button>
+        <a href="folder.html" class="tab-btn" style="text-decoration: none; color: inherit;">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Folder Interativo</span>
+          <span class="badge-pill" style="background:#fef3c7; color:#b45309;">3D</span>
+        </a>
       </div>
     </div>
   </header>
@@ -58,21 +65,25 @@
       <div class="container hero-content">
         <div>
           <span class="hero-tag">
-            <i class="fa-solid fa-hand-holding-heart"></i>
-            Campanha Social de Arrecadação de Alimentos
+            <i class="fa-solid fa-wheat-awn"></i>
+            Cooperativismo & Ação Social • Frísia & SENAI
           </span>
           <h1 class="hero-title">
-            Doe Alimentos, <br>
-            <span class="highlight">Multiplique Esperança</span>.
+            Somando Forças, <br>
+            <span class="highlight">Multiplicando Esperança</span>.
           </h1>
           <p class="hero-lead">
-            Junte-se aos seus colegas de turno e setor na maior mobilização solidária da nossa fábrica. Cada quilo doado transforma a mesa de famílias da nossa comunidade.
+            Junte-se aos cooperados e colaboradores de todos os turnos e setores na maior mobilização solidária da nossa cooperativa. Cada quilo doado transforma a mesa de dezenas de famílias da nossa comunidade.
           </p>
           <div class="hero-actions">
             <button class="btn-primary btn-open-donation">
               <i class="fa-solid fa-heart"></i>
               Simular Minha Doação
             </button>
+            <a href="folder.html" class="btn-secondary">
+              <i class="fa-solid fa-book-open"></i>
+              Folder Interativo 3D
+            </a>
             <a href="#pontos-coleta" class="btn-secondary">
               <i class="fa-solid fa-location-dot"></i>
               Pontos de Coleta
@@ -953,9 +964,14 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand-title">SENAI • Educação Profissional e Gestão</div>
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.15rem;">
+            <img src="assets/frisia-logo-white.png" alt="Frísia Cooperativa Agroindustrial" style="height: 32px; object-fit: contain;">
+            <span style="color: rgba(255, 255, 255, 0.3); font-size: 1.5rem; font-weight: 300;">|</span>
+            <img src="assets/senai-logo.png" alt="SENAI" style="height: 22px; filter: brightness(0) invert(1); object-fit: contain;">
+          </div>
+          <div class="footer-brand-title">Frísia Cooperativa Agroindustrial & SENAI</div>
           <p class="footer-desc">
-            Projeto Integrado de Administração: Gestão e Organização de Campanha Interna de Alimentos Não Perecíveis. Uma demonstração prática de competências em Planejamento, Organização, Liderança e Controle para impacto socioeconômico real.
+            Projeto Integrado de Administração: Gestão e Organização da Campanha Solidariedade em Ação. Unindo o espírito cooperativo da Frísia à excelência técnica do SENAI em prol da nossa comunidade.
           </p>
         </div>
         <div>
@@ -963,6 +979,7 @@
           <ul class="footer-links">
             <li><a href="#" onclick="document.getElementById('tab-campanha').click();">Página da Campanha</a></li>
             <li><a href="#" onclick="document.getElementById('tab-gestao').click();">Painel Acadêmico PODC</a></li>
+            <li><a href="folder.html">Folder Interativo 3D</a></li>
             <li><a href="#pontos-coleta">Pontos de Coleta</a></li>
             <li><a href="#" class="btn-open-donation">Simular Doação</a></li>
           </ul>
@@ -979,7 +996,7 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Campanha Solidariedade em Ação - Indústria Unida. Desenvolvido para o curso técnico SENAI.</div>
+        <div>© 2026 Campanha Solidariedade em Ação • Frísia Cooperativa Agroindustrial & SENAI.</div>
         <div>Total de Alimentos Arrecadados: <strong>720 kg</strong> (120% da Meta)</div>
       </div>
     </div>

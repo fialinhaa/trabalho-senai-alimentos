@@ -177,12 +177,12 @@ function init5W2HTable() {
     filtered.forEach(item => {
       const tr = document.createElement('tr');
       tr.innerHTML = `
-        <td style="font-weight: 800; color: #005caa;">${item.id}</td>
-        <td style="font-weight: 700; color: #0f172a;">${item.what}</td>
+        <td style="font-weight: 800; color: #1f3369;">${item.id}</td>
+        <td style="font-weight: 700; color: #1f3369;">${item.what}</td>
         <td>${item.why}</td>
-        <td><span style="display:inline-block; background:#f1f5f9; padding:2px 8px; border-radius:4px; font-size:0.75rem;">${item.where}</span></td>
+        <td><span style="display:inline-block; background:#f0f5fc; color:#1f3369; padding:2px 8px; border-radius:4px; font-size:0.75rem; font-weight:600;">${item.where}</span></td>
         <td style="white-space:nowrap; font-weight:600;">${item.when}</td>
-        <td style="font-weight:600; color:#0369a1;">${item.who}</td>
+        <td style="font-weight:700; color:#2274fb;">${item.who}</td>
         <td>${item.how}</td>
         <td style="white-space:nowrap; font-weight:700;">${item.howMuch > 0 ? 'R$ ' + item.howMuch.toFixed(2).replace('.', ',') : 'R$ 0,00'}</td>
         <td><span class="status-badge status-concluido">✓ ${item.status}</span></td>
@@ -219,7 +219,7 @@ function init5W2HTable() {
 }
 
 /* ==========================================================================
-   5. GRÁFICOS CHART.JS COM DADOS DA PLANILHA
+   5. GRÁFICOS CHART.JS COM DADOS DA PLANILHA (CORES FRÍSIA)
    ========================================================================== */
 function initCharts() {
   if (typeof Chart === 'undefined') return;
@@ -238,8 +238,8 @@ function initCharts() {
           {
             label: 'Arrecadação Semanal (kg)',
             data: [totais.semana1, totais.semana2, totais.semana3, totais.semana4],
-            backgroundColor: 'rgba(2, 132, 199, 0.85)',
-            borderColor: '#0284c7',
+            backgroundColor: '#2274fb',
+            borderColor: '#0b5bdf',
             borderWidth: 1,
             borderRadius: 6,
             yAxisID: 'y'
@@ -248,12 +248,12 @@ function initCharts() {
             label: 'Acumulado (kg)',
             data: [145, 145 + 215, 145 + 215 + 185, 720],
             type: 'line',
-            borderColor: '#10b981',
-            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+            borderColor: '#1c8a3c',
+            backgroundColor: 'rgba(28, 138, 60, 0.12)',
             fill: true,
             tension: 0.35,
             borderWidth: 3,
-            pointBackgroundColor: '#10b981',
+            pointBackgroundColor: '#1c8a3c',
             pointRadius: 5,
             yAxisID: 'y'
           }
@@ -263,7 +263,7 @@ function initCharts() {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: { position: 'top', labels: { font: { family: 'Plus Jakarta Sans', weight: '600' } } },
+          legend: { position: 'top', labels: { font: { family: 'DM Sans', weight: '700' } } },
           tooltip: {
             callbacks: {
               label: (ctx) => `${ctx.dataset.label}: ${ctx.raw} kg`
@@ -339,7 +339,7 @@ function initCharts() {
           {
             label: 'Total Realizado (kg)',
             data: alimentos.map(a => a.totalRealizado),
-            backgroundColor: '#005caa',
+            backgroundColor: '#1f3369',
             borderRadius: 4
           }
         ]
@@ -349,7 +349,7 @@ function initCharts() {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: { position: 'top', labels: { font: { family: 'Plus Jakarta Sans', weight: '600' } } }
+          legend: { position: 'top', labels: { font: { family: 'DM Sans', weight: '700' } } }
         },
         scales: {
           x: {
