@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campanha Solidariedade em Ação | Projeto Integrado SENAI</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js para Gráficos Dinâmicos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVEGAÇÃO ==================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#" class="brand-badge">
+        <span class="brand-logo-pill">SENAI</span>
+        <div>
+          <span class="brand-title">Solidariedade em Ação</span>
+          <span class="brand-sub">Indústria Unida • Projeto Integrado de Gestão</span>
+        </div>
+      </a>
+
+      <!-- Alternador de Modos de Visualização -->
+      <div class="view-switcher" role="tablist">
+        <button id="tab-campanha" class="tab-btn active" role="tab" aria-selected="true">
+          <i class="fa-solid fa-bullhorn"></i>
+          <span>Campanha & Divulgação</span>
+        </button>
+        <button id="tab-gestao" class="tab-btn" role="tab" aria-selected="false">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Painel de Gestão SENAI</span>
+          <span class="badge-pill">PODC</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- MODO 1: CAMPANHA DE DIVULGAÇÃO & ENGAJAMENTO (COLABORADORES)  -->
+  <!-- ============================================================ -->
+  <main id="view-campanha">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <div>
+          <span class="hero-tag">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            Campanha Social de Arrecadação de Alimentos
+          </span>
+          <h1 class="hero-title">
+            Doe Alimentos, <br>
+            <span class="highlight">Multiplique Esperança</span>.
+          </h1>
+          <p class="hero-lead">
+            Junte-se aos seus colegas de turno e setor na maior mobilização solidária da nossa fábrica. Cada quilo doado transforma a mesa de famílias da nossa comunidade.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary btn-open-donation">
+              <i class="fa-solid fa-heart"></i>
+              Simular Minha Doação
+            </button>
+            <a href="#pontos-coleta" class="btn-secondary">
+              <i class="fa-solid fa-location-dot"></i>
+              Pontos de Coleta
+            </a>
+          </div>
+        </div>
+
+        <!-- Card de Termômetro ao Vivo -->
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="hero-card-title">
+              <i class="fa-solid fa-fire text-amber"></i> Termômetro Oficial
+            </span>
+            <span class="status-badge-success">Meta Superada!</span>
+          </div>
+          <div class="stat-big-number" id="counter-total-kg">720 kg</div>
+          <div class="stat-sublabel">Alimentos arrecadados (Meta oficial: 600 kg)</div>
+
+          <div class="thermometer-container">
+            <div class="thermometer-bar" id="thermometer-fill"></div>
+          </div>
+          <div class="thermometer-labels">
+            <span>0 kg</span>
+            <span>Meta: 600 kg</span>
+            <span style="color:#fde047; font-weight:800;">120% Atingido!</span>
+          </div>
+
+          <div class="hero-metrics-grid">
+            <div class="hero-metric-box">
+              <div class="hero-metric-val" id="counter-meta-pct">120%</div>
+              <div class="hero-metric-lbl">Da Meta Global</div>
+            </div>
+            <div class="hero-metric-box">
+              <div class="hero-metric-val" id="counter-cestas">72</div>
+              <div class="hero-metric-lbl">Cestas Montadas</div>
+            </div>
+            <div class="hero-metric-box">
+              <div class="hero-metric-val" id="counter-colaboradores">320</div>
+              <div class="hero-metric-lbl">Colaboradores Ativos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA DE IMPACTO RÁPIDO -->
+    <section class="impact-strip">
+      <div class="container impact-grid">
+        <div class="impact-item">
+          <div class="impact-icon-wrapper"><i class="fa-solid fa-box-archive"></i></div>
+          <div>
+            <div class="impact-value">720 kg</div>
+            <div class="impact-desc">Total consolidado</div>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon-wrapper"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <div class="impact-value">80% Adesão</div>
+            <div class="impact-desc">Participação do quadro</div>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon-wrapper"><i class="fa-solid fa-utensils"></i></div>
+          <div>
+            <div class="impact-value">1.800+</div>
+            <div class="impact-desc">Refeições geradas</div>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon-wrapper"><i class="fa-solid fa-shield-heart"></i></div>
+          <div>
+            <div class="impact-value">99.86%</div>
+            <div class="impact-desc">Aproveitamento e qualidade</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: O QUE DOAR -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Itens Prioritários</span>
+          <h2 class="section-title">O que podemos doar?</h2>
+          <p class="section-subtitle">Priorize alimentos não perecíveis em embalagens originais e devidamente lacradas.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="food-card">
+            <div class="food-icon-large">🌾</div>
+            <h3 class="food-name">Arroz (Tipo 1 ou 2)</h3>
+            <p class="food-desc">Pacotes de 1kg ou 5kg lacrados. Base alimentar indispensável para as famílias atendidas.</p>
+          </div>
+          <div class="food-card">
+            <div class="food-icon-large">🫘</div>
+            <h3 class="food-name">Feijão (Carioca ou Preto)</h3>
+            <p class="food-desc">Pacotes de 1kg resistentes. Fundamental para fornecer ferro e proteínas no prato diário.</p>
+          </div>
+          <div class="food-card">
+            <div class="food-icon-large">🍝</div>
+            <h3 class="food-name">Macarrão</h3>
+            <p class="food-desc">Espaguete, parafuso, sêmola ou penne em embalagens intactas e dentro do prazo de validade.</p>
+          </div>
+          <div class="food-card">
+            <div class="food-icon-large">🌻</div>
+            <h3 class="food-name">Óleo de Soja</h3>
+            <p class="food-desc">Garrafas PET de 900ml lacradas. Item de alto valor nutricional e grande demanda nas comunidades.</p>
+          </div>
+          <div class="food-card">
+            <div class="food-icon-large">🥛</div>
+            <h3 class="food-name">Leite em Pó ou Líquido</h3>
+            <p class="food-desc">Alimento vital para crianças, gestantes e idosos acolhidos pelas instituições beneficiadas.</p>
+          </div>
+          <div class="food-card">
+            <div class="food-icon-large">🥫</div>
+            <h3 class="food-name">Outros Não Perecíveis</h3>
+            <p class="food-desc">Farinha de trigo/mandioca, açúcar, café em pó, molho de tomate e enlatados resistentes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: PONTOS DE COLETA -->
+    <section class="section section-alt" id="pontos-coleta">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Locais Estratégicos</span>
+          <h2 class="section-title">Onde deixar a sua doação?</h2>
+          <p class="section-subtitle">Instalamos 4 caixas organizadoras plásticas sinalizadas com faixas e cartazes por toda a empresa.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card point-card">
+            <span class="point-badge">Mais Movimentado</span>
+            <h3 class="point-title"><i class="fa-solid fa-utensils text-blue"></i> Refeitório Central</h3>
+            <p class="point-desc">Localizado na entrada do refeitório, próximo ao mural de avisos e TV corporativa.</p>
+            <div class="point-hours"><i class="fa-regular fa-clock"></i> 06:00 às 22:00</div>
+          </div>
+          <div class="card point-card">
+            <span class="point-badge">Fácil Acesso</span>
+            <h3 class="point-title"><i class="fa-solid fa-building text-blue"></i> Recepção Principal</h3>
+            <p class="point-desc">No hall de entrada para visitantes, colaboradores administrativos e prestadores de serviço.</p>
+            <div class="point-hours"><i class="fa-regular fa-clock"></i> 07:30 às 18:00</div>
+          </div>
+          <div class="card point-card">
+            <span class="point-badge">Turnos A, B e C</span>
+            <h3 class="point-title"><i class="fa-solid fa-person-booth text-blue"></i> Vestiários Operacionais</h3>
+            <p class="point-desc">Acesso estratégico para os operadores no início e no término de cada jornada de trabalho.</p>
+            <div class="point-hours"><i class="fa-regular fa-clock"></i> 24 Horas Disponível</div>
+          </div>
+          <div class="card point-card">
+            <span class="point-badge">Chão de Fábrica</span>
+            <h3 class="point-title"><i class="fa-solid fa-industry text-blue"></i> Hall da Produção</h3>
+            <p class="point-desc">Ao lado do almoxarifado fabril e manutenção industrial. Acompanhado pelos multiplicadores no DDS.</p>
+            <div class="point-hours"><i class="fa-regular fa-clock"></i> 06:00 às 18:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: GINCANA DOS SETORES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Engajamento & Competição Saudável</span>
+          <h2 class="section-title">Gincana Solidária dos Setores</h2>
+          <p class="section-subtitle">Veja o placar de arrecadação por área da empresa consolidado após 4 semanas de intensa cooperação.</p>
+        </div>
+
+        <div class="ranking-table-card">
+          <div class="ranking-row" style="background:#f8fafc; font-weight:800; color:#005caa; font-size:0.8rem; text-transform:uppercase;">
+            <div>Pos.</div>
+            <div>Setor / Área</div>
+            <div>Arrecadação</div>
+            <div>Participação</div>
+            <div>Destaque</div>
+          </div>
+          <div class="ranking-row">
+            <div class="rank-pos">1º</div>
+            <div>
+              <div class="rank-setor">Fábrica & Chão de Fábrica (Operação)</div>
+              <small style="color:#64748b;">Turnos 1, 2 e 3 com apoio dos supervisores no DDS</small>
+            </div>
+            <div class="rank-kg">285 kg</div>
+            <div>
+              <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 39.6%;"></div></div>
+              <small style="color:#64748b;">39.6% do total</small>
+            </div>
+            <div><span class="status-badge" style="background:#fef3c7; color:#b45309;">Campeão Solidário 🥇</span></div>
+          </div>
+          <div class="ranking-row">
+            <div class="rank-pos">2º</div>
+            <div>
+              <div class="rank-setor">Logística & Expedição</div>
+              <small style="color:#64748b;">Equipe de armazém e transporte de cargas</small>
+            </div>
+            <div class="rank-kg">175 kg</div>
+            <div>
+              <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 24.3%;"></div></div>
+              <small style="color:#64748b;">24.3% do total</small>
+            </div>
+            <div><span class="status-badge" style="background:#f1f5f9; color:#475569;">Vice-Campeão 🥈</span></div>
+          </div>
+          <div class="ranking-row">
+            <div class="rank-pos">3º</div>
+            <div>
+              <div class="rank-setor">Manutenção & Engenharia</div>
+              <small style="color:#64748b;">Equipes de manutenção preventiva e mecânica</small>
+            </div>
+            <div class="rank-kg">145 kg</div>
+            <div>
+              <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 20.1%;"></div></div>
+              <small style="color:#64748b;">20.1% do total</small>
+            </div>
+            <div><span class="status-badge" style="background:#ffedd5; color:#c2410c;">3º Lugar 🥉</span></div>
+          </div>
+          <div class="ranking-row">
+            <div class="rank-pos">4º</div>
+            <div>
+              <div class="rank-setor">Administrativo, RH & Gestão</div>
+              <small style="color:#64748b;">Escritórios, finanças, compras e diretoria</small>
+            </div>
+            <div class="rank-kg">115 kg</div>
+            <div>
+              <div class="rank-bar-bg"><div class="rank-bar-fill" style="width: 16.0%;"></div></div>
+              <small style="color:#64748b;">16.0% do total</small>
+            </div>
+            <div><span class="status-badge" style="background:#e0f2fe; color:#0369a1;">Destaque Engajamento 🏅</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: CALCULADORA DE IMPACTO -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="calc-card">
+          <div class="calc-grid">
+            <div>
+              <span class="section-tag">Simulador Interativo</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: #002b54; margin-bottom: 0.75rem;">
+                Calcule o Impacto da Sua Doação
+              </h2>
+              <p style="color: #475569; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Digite quantos quilos de alimentos você ou sua equipe pretendem doar para visualizar imediatamente a transformação gerada na mesa de quem mais precisa.
+              </p>
+              
+              <div class="calc-input-group">
+                <label for="calc-input-kg" class="calc-label">Quantidade de Alimentos para Simular (kg):</label>
+                <input type="number" id="calc-input-kg" class="calc-input" value="20" min="1" max="1000">
+              </div>
+
+              <button class="btn-primary btn-open-donation" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+                <i class="fa-solid fa-clipboard-check"></i> Registrar Minha Intenção de Doação
+              </button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="calc-result-box">
+                <div class="calc-result-number" id="calc-refeicoes">50</div>
+                <div class="calc-result-label">Refeições Completas Estimadas</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="calc-result-box">
+                  <div class="calc-result-number" style="font-size: 2rem; color: #059669;" id="calc-cestas">2.0</div>
+                  <div class="calc-result-label">Cestas Básicas (10kg)</div>
+                </div>
+                <div class="calc-result-box">
+                  <div class="calc-result-number" style="font-size: 2rem; color: #d97706;" id="calc-familias">2</div>
+                  <div class="calc-result-label">Famílias Alimentadas (~10 dias)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: PERGUNTAS FREQUENTES (FAQ) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tire Suas Dúvidas</span>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          <p class="section-subtitle">Tudo o que você precisa saber sobre a logística e destinação da nossa campanha solidária.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: #003e78; margin-bottom: 0.5rem;">
+              <i class="fa-solid fa-circle-question" style="color: #0284c7;"></i> Posso doar alimentos já abertos?
+            </h3>
+            <p style="font-size: 0.9rem; color: #475569;">
+              Não. Por rigorosas exigências sanitárias e controle de qualidade supervisionado pelos assistentes na triagem, aceitamos apenas alimentos lacrados na embalagem original e dentro do prazo de validade.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: #003e78; margin-bottom: 0.5rem;">
+              <i class="fa-solid fa-handshake" style="color: #0284c7;"></i> Para onde vão os alimentos arrecadados?
+            </h3>
+            <p style="font-size: 0.9rem; color: #475569;">
+              Todos os itens são triados, pesados e empacotados em cestas básicas de 10 kg. A entrega é realizada com termo formal e registro fotográfico a uma instituição beneficente cadastrada pelo setor de Responsabilidade Social.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: #003e78; margin-bottom: 0.5rem;">
+              <i class="fa-solid fa-trophy" style="color: #0284c7;"></i> Como meu setor pontua na gincana?
+            </h3>
+            <p style="font-size: 0.9rem; color: #475569;">
+              Ao depositar suas doações nas caixas de coleta, certifique-se de avisar o multiplicador do seu setor durante o DDS ou assinar a planilha de ponto voluntário com a comissão de assistentes!
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: #003e78; margin-bottom: 0.5rem;">
+              <i class="fa-solid fa-box-open" style="color: #0284c7;"></i> Posso doar produtos de higiene?
+            </h3>
+            <p style="font-size: 0.9rem; color: #475569;">
+              O foco prioritário da gincana e das métricas acadêmicas são alimentos não perecíveis (arroz, feijão, macarrão, leite e óleo), mas produtos de higiene e limpeza doados serão destinados em kits complementares às famílias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================ -->
+  <!-- MODO 2: PAINEL DE GESTÃO SENAI - PODC (TRABALHO ACADÊMICO)   -->
+  <!-- ============================================================ -->
+  <main id="view-gestao" style="display: none;">
+
+    <section class="hero-section" style="padding: 3rem 0;">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <span class="hero-tag"><i class="fa-solid fa-graduation-cap"></i> Metodologia Administrativa SENAI</span>
+            <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem;">Painel de Gestão & Indicadores PODC</h1>
+            <p style="color: rgba(255, 255, 255, 0.85); font-size: 1rem; max-width: 650px;">
+              Aplicação prática das quatro funções clássicas da Administração de Empresas (Planejamento, Organização, Direção e Controle) no projeto de arrecadação interna.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem;">
+            <button onclick="window.print()" class="btn-secondary">
+              <i class="fa-solid fa-print"></i> Imprimir / PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
+
+      <!-- SUB-ABAS PODC -->
+      <div class="podc-nav" role="tablist">
+        <div class="podc-pill active" data-target="podc-planejamento">
+          <span class="podc-pill-tag">Função 1</span>
+          <div class="podc-pill-title">Planejamento</div>
+        </div>
+        <div class="podc-pill" data-target="podc-organizacao">
+          <span class="podc-pill-tag">Função 2</span>
+          <div class="podc-pill-title">Organização (5W2H)</div>
+        </div>
+        <div class="podc-pill" data-target="podc-direcao">
+          <span class="podc-pill-tag">Função 3</span>
+          <div class="podc-pill-title">Direção & Comunicação</div>
+        </div>
+        <div class="podc-pill" data-target="podc-controle">
+          <span class="podc-pill-tag">Função 4</span>
+          <div class="podc-pill-title">Controle & Métricas</div>
+        </div>
+      </div>
+
+      <!-- ================= 1. PLANEJAMENTO ================= -->
+      <div id="podc-planejamento" class="podc-content-section">
+        <div class="grid-2" style="margin-bottom: 2rem;">
+          <div class="card">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #003e78; margin-bottom: 1rem;">
+              <i class="fa-solid fa-bullseye text-blue"></i> Dimensões do Planejamento
+            </h3>
+            <table class="data-table">
+              <tbody>
+                <tr>
+                  <td style="font-weight: 700; width: 35%;">Nome da Campanha</td>
+                  <td>Campanha Solidariedade em Ação - Indústria Unida</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Contexto da Ação</td>
+                  <td>Campanha social interna organizada pelo setor administrativo para arrecadação de alimentos não perecíveis.</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Objetivo Geral</td>
+                  <td>Engajar os colaboradores de todos os turnos e setores da indústria na arrecadação voluntária de alimentos.</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Período de Execução</td>
+                  <td>01/10/2026 a 30/10/2026 (Duração total de 30 dias corridos)</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Público-Alvo</td>
+                  <td>100% dos colaboradores da empresa (Operação / Chão de Fábrica, Logística, Manutenção, Administrativo e Gestão)</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Meta Quantitativa</td>
+                  <td><strong>600 kg</strong> (equivalente a 60 cestas básicas padronizadas de 10 kg)</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Meta de Engajamento</td>
+                  <td>No mínimo <strong>75%</strong> de participação ativa do quadro funcional</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #003e78; margin-bottom: 1rem;">
+              <i class="fa-solid fa-boxes-stacked text-blue"></i> Recursos Materiais e Orçamento
+            </h3>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.25rem;">
+              Recursos mapeados durante a etapa de planejamento para viabilizar as atividades com custo enxuto e máxima eficiência.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="background: #f8fafc; padding: 0.85rem; border-radius: 8px; border-left: 4px solid #005caa;">
+                <div style="font-weight: 700; color: #0f172a;">4 Caixas Organizadoras Plásticas</div>
+                <div style="font-size: 0.8rem; color: #64748b;">Postos de coleta na Recepção, Refeitório, Vestiários e Almoxarifado. (Custo: R$ 85,00)</div>
+              </div>
+              <div style="background: #f8fafc; padding: 0.85rem; border-radius: 8px; border-left: 4px solid #0284c7;">
+                <div style="font-weight: 700; color: #0f172a;">25 Cartazes Coloridos Formato A3</div>
+                <div style="font-size: 0.8rem; color: #64748b;">Comunicação visual afixada em todos os quadros de avisos e corredores. (Custo: R$ 45,00)</div>
+              </div>
+              <div style="background: #f8fafc; padding: 0.85rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                <div style="font-weight: 700; color: #0f172a;">Embalagens, Fitas e Sacos para Cestas</div>
+                <div style="font-size: 0.8rem; color: #64748b;">Kits de lacração para montagem padronizada das 72 cestas básicas. (Custo: R$ 60,00)</div>
+              </div>
+              <div style="background: #f8fafc; padding: 0.85rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                <div style="font-weight: 700; color: #0f172a;">Balança Digital de Precisão</div>
+                <div style="font-size: 0.8rem; color: #64748b;">Cedida pelo Almoxarifado Interno da Empresa (Custo: R$ 0,00 - Reuso interno)</div>
+              </div>
+            </div>
+            <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: #003e78;">Custo Total Previsto / Executado:</span>
+              <span style="font-size: 1.25rem; font-weight: 900; color: #059669;">R$ 190,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 2. ORGANIZAÇÃO (5W2H) ================= -->
+      <div id="podc-organizacao" class="podc-content-section" style="display: none;">
+        <div class="card" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: #003e78;">
+                <i class="fa-solid fa-list-check text-blue"></i> Matriz Operacional 5W2H (12 Atividades)
+              </h3>
+              <p style="color: #64748b; font-size: 0.9rem;">
+                Detalhamento tático de todas as ações planejadas e executadas ao longo dos 30 dias de campanha.
+              </p>
+            </div>
+            <div>
+              <span class="status-badge status-concluido" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
+                <i class="fa-solid fa-check-double"></i> 100% das Tarefas Concluídas no Prazo
+              </span>
+            </div>
+          </div>
+
+          <!-- Controles de Pesquisa e Filtro -->
+          <div class="table-controls">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="search-5w2h" class="search-input" placeholder="Filtrar por atividade, local, responsável...">
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <label for="filter-who" style="font-size: 0.85rem; font-weight: 600; color: #475569;">Responsável:</label>
+              <select id="filter-who" class="calc-input" style="padding: 0.45rem 0.75rem; font-size: 0.85rem; width: auto;">
+                <option value="">Todos os Responsáveis</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Tabela Responsiva 5W2H -->
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>O que fazer? (What)</th>
+                  <th>Por que fazer? (Why)</th>
+                  <th>Onde? (Where)</th>
+                  <th>Quando? (When)</th>
+                  <th>Quem fará? (Who)</th>
+                  <th>Como fazer? (How)</th>
+                  <th>Custo (How Much)</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="table-5w2h-body">
+                <!-- Preenchido dinamicamente pelo app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 3. DIREÇÃO ================= -->
+      <div id="podc-direcao" class="podc-content-section" style="display: none;">
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: #003e78; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-sitemap text-blue"></i> Matriz de Responsabilidades da Equipe
+          </h3>
+          <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Divisão clara de papéis e entregáveis para assegurar liderança ativa e alinhamento operacional.
+          </p>
+
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-role">Líder de Infraestrutura & Logística</div>
+              <div class="team-name">Assistente Administrativo 1</div>
+              <span class="team-sector">Administrativo / Logística</span>
+              <div class="team-field-title">Principais Atribuições</div>
+              <p class="team-field-desc">Mapear pontos estratégicos de coleta, confeccionar caixas, recolher doações periodicamente e organizar estocagem segura no almoxarifado.</p>
+              <div class="team-field-title">Entregáveis</div>
+              <p class="team-field-desc">Postos instalados; logística de movimentação interna e segurança dos itens estocados.</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-role">Líder de Comunicação & Engajamento</div>
+              <div class="team-name">Assistente Administrativo 2</div>
+              <span class="team-sector">Comunicação Interna / RH</span>
+              <div class="team-field-title">Principais Atribuições</div>
+              <p class="team-field-desc">Desenvolver peças gráficas e cartazes, redigir comunicados, disparar e-mails institucionais, abastecer murais e atualizar termômetros semanais.</p>
+              <div class="team-field-title">Entregáveis</div>
+              <p class="team-field-desc">Comunicação visual ativa; avisos afixados; boletins semanais publicados com transparência.</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-role">Líder de Controle & Qualidade</div>
+              <div class="team-name">Assistente Administrativo 3</div>
+              <span class="team-sector">Administrativo / Controladoria</span>
+              <div class="team-field-title">Principais Atribuições</div>
+              <p class="team-field-desc">Operar a balança digital, conferir validades e integridade das embalagens, lançar pesagens semanais na planilha e acompanhar métricas.</p>
+              <div class="team-field-title">Entregáveis</div>
+              <p class="team-field-desc">Planilha de dados atualizada em tempo hábil; relatórios de pesagem e indicadores de desempenho confiáveis.</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-role">Líder de Articulação & Destinação</div>
+              <div class="team-name">Assistente Administrativo 4</div>
+              <span class="team-sector">Administrativo / Responsabilidade Social</span>
+              <div class="team-field-title">Principais Atribuições</div>
+              <p class="team-field-desc">Contatar a instituição beneficiada, checar demandas prioritárias de alimentos, agendar transporte de entrega e emitir termo de doação formal.</p>
+              <div class="team-field-title">Entregáveis</div>
+              <p class="team-field-desc">Ofício de destinação; termo de entrega e recebimento assinado; registro fotográfico oficial.</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-role">Sponsor / Patrocinador do Projeto</div>
+              <div class="team-name">Gestor Administrativo</div>
+              <span class="team-sector">Gerência Administrativa</span>
+              <div class="team-field-title">Principais Atribuições</div>
+              <p class="team-field-desc">Validar o orçamento, aprovar materiais de divulgação, homologar o plano e negociar liberações com outras gerências da planta fabril.</p>
+              <div class="team-field-title">Entregáveis</div>
+              <p class="team-field-desc">Aprovação institucional; liberação de recursos; apoio executivo contínuo.</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-role">Multiplicadores Setoriais</div>
+              <div class="team-name">Supervisores de Produção</div>
+              <span class="team-sector">Fábrica / Manutenção / Expedição</span>
+              <div class="team-field-title">Principais Atribuições</div>
+              <p class="team-field-desc">Incentivar as equipes de turno, ceder 5 minutos do DDS para divulgações e garantir que as caixas da produção permaneçam preservadas.</p>
+              <div class="team-field-title">Entregáveis</div>
+              <p class="team-field-desc">Engajamento dos operadores; alta adesão do efetivo fabril de linha de frente.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cronograma Multicanal de Comunicação -->
+        <div class="card" style="margin-top: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: #003e78; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-comments text-blue"></i> Cronograma de Comunicação & Engajamento
+          </h3>
+          <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Estratégia de comunicação multicanal ao longo das 4 semanas para manter o engajamento e transparência.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">05/10/2026 • E-mail Geral + Cartazes Murais</div>
+                <div class="timeline-channel">Lançamento Oficial da Campanha</div>
+                <div class="timeline-msg">Divulgação do porquê da campanha, meta oficial de 600 kg e mapa dos postos de coleta.</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">06/10/2026 • Diálogo Diário de Segurança (DDS)</div>
+                <div class="timeline-channel">Orientações Operacionais no Chão de Fábrica</div>
+                <div class="timeline-msg">Esclarecimento de dúvidas sobre embalagens, alimentos aceitos e convite para participação ativa dos operários.</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">13/10/2026 • Mural do Refeitório & TV Corporativa</div>
+                <div class="timeline-channel">Divulgação do 1º Termômetro (145 kg)</div>
+                <div class="timeline-msg">Atingimento de 145 kg na primeira semana. Reconhecimento público da liderança inicial da Fábrica.</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">20/10/2026 • Mural Físico & TV Corporativa</div>
+                <div class="timeline-channel">Divulgação do 2º Termômetro (360 kg - 60% da Meta)</div>
+                <div class="timeline-msg">Reforço motivacional mostrando que a meta é plenamente tangível e divulgando o ranking setorial.</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">26/10/2026 • WhatsApp Corporativo, Murais e E-mail</div>
+                <div class="timeline-channel">Contagem Regressiva: Últimos 4 Dias!</div>
+                <div class="timeline-msg">Sprint final para arrecadação, convocando os setores a superarem o objetivo global.</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">03/11/2026 • Reunião Geral no Auditório e Comunicado Oficial</div>
+                <div class="timeline-channel">Resultado Final: Meta Superada! 720 kg Arrecadados</div>
+                <div class="timeline-msg">Apresentação transparente das métricas, agradecimento formal e entrega física à entidade social.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 4. CONTROLE ================= -->
+      <div id="podc-controle" class="podc-content-section" style="display: none;">
+        
+        <!-- Indicadores Resumidos de Eficácia -->
+        <div class="grid-4" style="margin-bottom: 2rem;">
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Total Arrecadado</div>
+            <div style="font-size: 2.25rem; font-weight: 900; color: #005caa; margin: 0.25rem 0;">720 kg</div>
+            <span class="status-badge status-concluido">Meta: 600 kg (+20%)</span>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Colaboradores</div>
+            <div style="font-size: 2.25rem; font-weight: 900; color: #0284c7; margin: 0.25rem 0;">320</div>
+            <span class="status-badge status-concluido">Meta: 250 (+28%)</span>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Taxa de Adesão</div>
+            <div style="font-size: 2.25rem; font-weight: 900; color: #059669; margin: 0.25rem 0;">80%</div>
+            <span class="status-badge status-concluido">Meta: 75% (+5 p.p.)</span>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Custo por Kg</div>
+            <div style="font-size: 2.25rem; font-weight: 900; color: #d97706; margin: 0.25rem 0;">R$ 0,26</div>
+            <span class="status-badge" style="background:#fef3c7; color:#b45309;">Altíssima Eficiência</span>
+          </div>
+        </div>
+
+        <!-- Gráficos Analíticos -->
+        <div class="grid-2" style="margin-bottom: 2rem;">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h4 class="chart-title"><i class="fa-solid fa-chart-column text-blue"></i> Evolução Semanal da Arrecadação (kg)</h4>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-evolucao"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h4 class="chart-title"><i class="fa-solid fa-chart-pie text-blue"></i> Distribuição por Tipo de Alimento</h4>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-alimentos"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card" style="margin-bottom: 2rem;">
+          <div class="chart-header">
+            <h4 class="chart-title"><i class="fa-solid fa-sliders text-blue"></i> Comparativo: Meta Planejada vs. Total Realizado por Alimento</h4>
+          </div>
+          <div class="chart-wrapper" style="height: 320px;">
+            <canvas id="chart-comparativo"></canvas>
+          </div>
+        </div>
+
+        <!-- Tabela Analítica Completa por Alimento (Extraída da Planilha1) -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: #003e78; margin-bottom: 1rem;">
+            <i class="fa-solid fa-table-list text-blue"></i> Painel Analítico de Pesagem Semanal (Dados Oficiais da Planilha)
+          </h3>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Categoria / Alimento</th>
+                  <th>Semana 1</th>
+                  <th>Semana 2</th>
+                  <th>Semana 3</th>
+                  <th>Semana 4</th>
+                  <th>Total Realizado</th>
+                  <th>Meta Planejada</th>
+                  <th>% Atingido</th>
+                  <th>Situação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 700; color: #003e78;">Arroz (kg)</td>
+                  <td>45 kg</td>
+                  <td>60 kg</td>
+                  <td>55 kg</td>
+                  <td>50 kg</td>
+                  <td style="font-weight: 800; color: #059669;">210 kg</td>
+                  <td>180 kg</td>
+                  <td style="font-weight: 700;">116,7%</td>
+                  <td><span class="status-badge status-concluido">Meta Atingida</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #003e78;">Feijão (kg)</td>
+                  <td>30 kg</td>
+                  <td>45 kg</td>
+                  <td>40 kg</td>
+                  <td>35 kg</td>
+                  <td style="font-weight: 800; color: #059669;">150 kg</td>
+                  <td>120 kg</td>
+                  <td style="font-weight: 700;">125,0%</td>
+                  <td><span class="status-badge status-concluido">Meta Atingida</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #003e78;">Macarrão (kg)</td>
+                  <td>25 kg</td>
+                  <td>35 kg</td>
+                  <td>30 kg</td>
+                  <td>30 kg</td>
+                  <td style="font-weight: 800; color: #059669;">120 kg</td>
+                  <td>100 kg</td>
+                  <td style="font-weight: 700;">120,0%</td>
+                  <td><span class="status-badge status-concluido">Meta Atingida</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #003e78;">Óleo de Soja (litros/kg)</td>
+                  <td>15 L</td>
+                  <td>25 L</td>
+                  <td>20 L</td>
+                  <td>25 L</td>
+                  <td style="font-weight: 800; color: #059669;">85 L</td>
+                  <td>80 L</td>
+                  <td style="font-weight: 700;">106,3%</td>
+                  <td><span class="status-badge status-concluido">Meta Atingida</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #003e78;">Leite em Pó / Líquido (kg/L)</td>
+                  <td>20 kg</td>
+                  <td>30 kg</td>
+                  <td>25 kg</td>
+                  <td>20 kg</td>
+                  <td style="font-weight: 800; color: #059669;">95 kg</td>
+                  <td>80 kg</td>
+                  <td style="font-weight: 700;">118,8%</td>
+                  <td><span class="status-badge status-concluido">Meta Atingida</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: #003e78;">Outros Não Perecíveis</td>
+                  <td>10 kg</td>
+                  <td>20 kg</td>
+                  <td>15 kg</td>
+                  <td>15 kg</td>
+                  <td style="font-weight: 800; color: #059669;">60 kg</td>
+                  <td>40 kg</td>
+                  <td style="font-weight: 700;">150,0%</td>
+                  <td><span class="status-badge status-concluido">Meta Atingida</span></td>
+                </tr>
+                <tr style="background: #f0f9ff; font-weight: 800; border-top: 2px solid #0284c7;">
+                  <td style="color: #002b54;">TOTAL GERAL ARRECADADO</td>
+                  <td>145 kg</td>
+                  <td>215 kg</td>
+                  <td>185 kg</td>
+                  <td>175 kg</td>
+                  <td style="color: #005caa; font-size: 1.1rem;">720 kg</td>
+                  <td>600 kg</td>
+                  <td style="color: #059669; font-size: 1.1rem;">120,0%</td>
+                  <td><span class="status-badge status-concluido">Meta Superada</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tabela de Indicadores Gerais de Monitoramento -->
+        <div class="card">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: #003e78; margin-bottom: 1rem;">
+            <i class="fa-solid fa-gauge-high text-blue"></i> Indicadores Gerais de Monitoramento e Desempenho
+          </h3>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Indicador de Qualidade</th>
+                  <th>Sem 1</th>
+                  <th>Sem 2</th>
+                  <th>Sem 3</th>
+                  <th>Sem 4</th>
+                  <th>Consolidado</th>
+                  <th>Meta Planejada</th>
+                  <th>Avaliação de Eficácia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 700;">Colaboradores Participantes</td>
+                  <td>62</td>
+                  <td>98</td>
+                  <td>84</td>
+                  <td>76</td>
+                  <td style="font-weight: 800; color: #059669;">320</td>
+                  <td>250</td>
+                  <td>Meta de engajamento superada (+28%)</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Taxa de Adesão Geral</td>
+                  <td>19%</td>
+                  <td>31%</td>
+                  <td>26%</td>
+                  <td>24%</td>
+                  <td style="font-weight: 800; color: #059669;">80%</td>
+                  <td>75%</td>
+                  <td>Participação ampla de todos os setores e turnos</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Cumprimento Cronograma (5W2H)</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td style="font-weight: 800; color: #059669;">100%</td>
+                  <td>100%</td>
+                  <td>100% das tarefas executadas com rigor no prazo</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">Itens Descartados (kg)</td>
+                  <td>0 kg</td>
+                  <td>1 kg</td>
+                  <td>0 kg</td>
+                  <td>0 kg</td>
+                  <td style="font-weight: 800; color: #059669;">1 kg</td>
+                  <td>0 kg</td>
+                  <td>Excelente controle na triagem e conscientização prévia</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">SENAI • Educação Profissional e Gestão</div>
+          <p class="footer-desc">
+            Projeto Integrado de Administração: Gestão e Organização de Campanha Interna de Alimentos Não Perecíveis. Uma demonstração prática de competências em Planejamento, Organização, Liderança e Controle para impacto socioeconômico real.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">Navegação Rápida</div>
+          <ul class="footer-links">
+            <li><a href="#" onclick="document.getElementById('tab-campanha').click();">Página da Campanha</a></li>
+            <li><a href="#" onclick="document.getElementById('tab-gestao').click();">Painel Acadêmico PODC</a></li>
+            <li><a href="#pontos-coleta">Pontos de Coleta</a></li>
+            <li><a href="#" class="btn-open-donation">Simular Doação</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Funções Clássicas</div>
+          <ul class="footer-links">
+            <li><a href="#" onclick="document.getElementById('tab-gestao').click();">1. Planejamento</a></li>
+            <li><a href="#" onclick="document.getElementById('tab-gestao').click();">2. Organização (5W2H)</a></li>
+            <li><a href="#" onclick="document.getElementById('tab-gestao').click();">3. Direção & Equipe</a></li>
+            <li><a href="#" onclick="document.getElementById('tab-gestao').click();">4. Controle & KPIs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Campanha Solidariedade em Ação - Indústria Unida. Desenvolvido para o curso técnico SENAI.</div>
+        <div>Total de Alimentos Arrecadados: <strong>720 kg</strong> (120% da Meta)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL DE DOAÇÃO SIMBÓLICA ==================== -->
+  <div class="modal-overlay" id="donation-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-heart text-red"></i> Registrar Intenção de Doação</h3>
+        <button class="modal-close" id="modal-close-btn">&times;</button>
+      </div>
+
+      <form id="donation-form">
+        <div class="calc-input-group">
+          <label for="donor-name" class="calc-label">Seu Nome / Matrícula:</label>
+          <input type="text" id="donor-name" class="calc-input" placeholder="Ex: Carlos Silva" required>
+        </div>
+
+        <div class="calc-input-group">
+          <label for="donor-sector" class="calc-label">Seu Setor / Área:</label>
+          <select id="donor-sector" class="calc-input" required>
+            <option value="">Selecione o setor...</option>
+            <option value="Fábrica & Chão de Fábrica">Fábrica & Chão de Fábrica (Operação)</option>
+            <option value="Logística & Expedição">Logística & Expedição</option>
+            <option value="Manutenção & Engenharia">Manutenção & Engenharia</option>
+            <option value="Administrativo, RH & Gestão">Administrativo, RH & Gestão</option>
+          </select>
+        </div>
+
+        <div class="calc-input-group">
+          <label for="donor-food" class="calc-label">Principal Alimento que Pretende Doar:</label>
+          <select id="donor-food" class="calc-input">
+            <option value="Arroz">Arroz</option>
+            <option value="Feijão">Feijão</option>
+            <option value="Macarrão">Macarrão</option>
+            <option value="Óleo de Soja">Óleo de Soja</option>
+            <option value="Leite">Leite em Pó ou Líquido</option>
+            <option value="Cesta Completa">Cesta Básica Completa</option>
+            <option value="Outros">Outros Não Perecíveis</option>
+          </select>
+        </div>
+
+        <div class="calc-input-group">
+          <label for="donor-kg" class="calc-label">Quantidade Estimada (kg ou unidades):</label>
+          <input type="number" id="donor-kg" class="calc-input" value="5" min="1" max="100" required>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+          <i class="fa-solid fa-check"></i> Confirmar Doação Simbólica
+        </button>
+      </form>
+
+      <!-- Mensagem de Sucesso -->
+      <div id="modal-success-state" style="display: none; text-align: center; padding: 1.5rem 0;">
+        <div style="font-size: 3.5rem; color: #10b981; margin-bottom: 0.75rem;">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h4 style="font-size: 1.5rem; font-weight: 800; color: #002b54; margin-bottom: 0.5rem;">Registro Efetuado com Sucesso!</h4>
+        <p id="success-summary" style="color: #475569; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+          <!-- Preenchido via app.js -->
+        </p>
+        <button onclick="document.getElementById('donation-modal').classList.remove('active')" class="btn-primary" style="margin: 0 auto;">
+          Fechar Janela
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

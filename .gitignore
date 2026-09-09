@@ -1,0 +1,7 @@
+# Ignorar arquivos temporários do sistema e do Office
+~$*.xlsx
+Thumbs.db
+.DS_Store
+*.log
+.vscode/
+.idea/
